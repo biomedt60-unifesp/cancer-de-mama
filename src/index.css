@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-10: #f8eef3;
+  --color-brand-50: #fce4ec;
+  --color-brand-100: #f8bbd0;
+  --color-brand-600: #d81b60;
+  --color-brand-700: #ad1457;
+
+  --color-neutral-0: #ffffff;
+  --color-neutral-700: #374151;
+
+  --color-accent-coral: #ff6b9d;
+
+  --color-ink: #374151;
+  --color-primary-dark: #ad1457;
+  --color-surface: #ffffff;
+  --color-cover: #d81b60;
+  --color-page-bg: #fce4ec;
+
+  --folder-max-width: 52rem;
+
+  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    @apply m-0 font-sans text-ink antialiased;
+    font-size: clamp(0.9375rem, 2.8vw, 1rem);
+    line-height: 1.55;
+    background-color: var(--color-surface);
+    padding: 0;
+  }
+
+  #root {
+    @apply w-full;
+  }
+
+  @media (max-width: 639px) {
+    .print-folder {
+      width: 100%;
+      max-width: none;
+      margin-inline: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  @media (min-width: 640px) {
+    body {
+      min-height: 100dvh;
+      background-color: var(--color-page-bg);
+      padding: max(1.5rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right))
+        max(2.5rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+    }
+  }
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+    size: A4;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    padding: 0 !important;
+    background: var(--color-neutral-0) !important;
+  }
+
+  .print-folder {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .print-cover {
+    background-color: var(--color-cover) !important;
+    color: var(--color-neutral-0);
+    border-bottom: 3pt solid var(--color-primary-dark);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: var(--color-primary-dark) !important;
+    text-decoration: underline;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75em;
+    font-weight: 400;
+    word-break: break-all;
+  }
+
+  a[href^='tel:']::after {
+    content: none;
+  }
+}

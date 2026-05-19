@@ -1,0 +1,71 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="256" cy="256" r="205" fill="#F8EEF3"/>
+
+  <!-- Main drop -->
+  <path
+    d="
+      M170 120
+      C175 175 150 225 150 290
+      C150 365 198 410 250 410
+      C305 410 338 372 338 330
+      C338 295 320 265 290 240
+      C255 212 210 190 190 150
+      C180 132 176 124 170 120
+      Z
+    "
+    fill="#F6B3C9"
+    stroke="#FF8DB3"
+    stroke-width="6"
+    stroke-linejoin="round"
+  />
+
+  <!-- Inner darker border -->
+  <path
+    d="
+      M172 124
+      C177 177 154 226 154 289
+      C154 361 199 404 249 404
+      C301 404 332 369 332 330
+      C332 297 316 270 287 245
+      C253 216 210 194 192 154
+      C183 136 178 127 172 124
+      Z
+    "
+    fill="none"
+    stroke="#E83E78"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Side bubble outer border -->
+  <circle
+    cx="332"
+    cy="308"
+    r="15"
+    fill="#FF8DB3"
+  />
+
+  <!-- Side bubble inner border -->
+  <circle
+    cx="332"
+    cy="308"
+    r="12"
+    fill="#F36AA0"
+    stroke="#E83E78"
+    stroke-width="2"
+  />
+
+  <!-- Heart -->
+  <path
+    d="
+      M214 318
+      C214 304 226 296 236 304
+      C246 296 258 304 258 318
+      C258 333 236 347 236 347
+      C236 347 214 333 214 318
+      Z
+    "
+    fill="#E83E78"
+  />
+</svg>
