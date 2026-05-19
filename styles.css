@@ -99,13 +99,23 @@ body {
   flex-wrap: wrap;
 }
 
-.folder-meta span {
+.folder-meta span,
+.folder-meta__link {
   padding: 0.35rem 0.85rem;
   font-size: 0.82rem;
   font-weight: 700;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
+}
+
+.folder-meta__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.folder-meta__link:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 /* Miolo — painéis do folder */
@@ -346,6 +356,11 @@ body {
 
 .folder-back a {
   color: #ad1457;
+  font-weight: 600;
+}
+
+.folder-social {
+  margin-top: 0.5rem !important;
   font-weight: 600;
 }
 
