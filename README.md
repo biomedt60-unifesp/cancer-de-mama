@@ -6,8 +6,15 @@ Conteúdo resumido com base na cartilha do [INCA](https://www.gov.br/inca/pt-br/
 
 ## Visualizar
 
-Abra `index.html` no navegador.
+Abra `index.html` no navegador ou acesse o site publicado (após ativar o Pages):
+
+**https://kayhori.github.io/cancer-de-mama/**
 
 ## Publicar (GitHub Pages)
 
-Envie os arquivos para um repositório GitHub e ative Pages na branch `main`, pasta raiz.
+1. Abra [Settings → Pages](https://github.com/kayhori/cancer-de-mama/settings/pages) do repositório.
+2. Em **Build and deployment → Source**, escolha **Deploy from a branch**.
+3. Branch: **main**, pasta: **/ (root)** → **Save**.
+4. Aguarde 1–2 minutos; o link acima ficará disponível.
+
+Atualizações: `git push` na branch `main` republica o site automaticamente.
