@@ -145,6 +145,110 @@ body {
   border-radius: 4px;
 }
 
+.panel-highlight--call {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.panel--health {
+  border-left: none;
+  background: #fff;
+  border: 1px solid #f8bbd9;
+  border-radius: 6px;
+}
+
+.health-card {
+  padding: 1rem 1.05rem;
+  background: #fdf2f7;
+  border-radius: 6px;
+  border: 1px solid #f8bbd9;
+}
+
+.health-card__name {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #880e4f;
+}
+
+.health-card__type {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  color: #6d1b4a;
+}
+
+.health-card__details {
+  margin: 0 0 0.85rem;
+}
+
+.health-card__details > div + div {
+  margin-top: 0.55rem;
+}
+
+.health-card__details dt {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ad1457;
+}
+
+.health-card__details dd {
+  margin: 0.15rem 0 0;
+}
+
+.health-card__details address {
+  font-style: normal;
+}
+
+.health-card__details a {
+  color: #ad1457;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.health-card__details a:hover {
+  text-decoration: underline;
+}
+
+.health-card__services {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  color: #4a1535;
+}
+
+.health-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.health-card__btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: #c2185b;
+  border-radius: 999px;
+}
+
+.health-card__btn:hover {
+  background: #ad1457;
+}
+
+.health-card__btn--secondary {
+  color: #ad1457;
+  background: #fff;
+  border: 2px solid #e91e8c;
+}
+
+.health-card__btn--secondary:hover {
+  background: #fce4ec;
+}
+
 .panel-note {
   margin-top: 0.75rem !important;
   font-size: 0.9rem;
