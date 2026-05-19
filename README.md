@@ -10,11 +10,11 @@ Abra `index.html` no navegador ou acesse o site publicado (após ativar o Pages)
 
 **https://kayhori.github.io/cancer-de-mama/**
 
-## Publicar (GitHub Pages)
+## Publicar (GitHub Pages + Actions)
 
-1. Abra [Settings → Pages](https://github.com/kayhori/cancer-de-mama/settings/pages) do repositório.
-2. Em **Build and deployment → Source**, escolha **Deploy from a branch**.
-3. Branch: **main**, pasta: **/ (root)** → **Save**.
-4. Aguarde 1–2 minutos; o link acima ficará disponível.
+1. Abra [Settings → Pages](https://github.com/kayhori/cancer-de-mama/settings/pages).
+2. Em **Build and deployment → Source**, escolha **GitHub Actions**.
+3. Faça push na `main` (ou rode o workflow manualmente em **Actions**).
+4. Aguarde o job **Deploy to GitHub Pages** concluir; o link acima ficará disponível.
 
-Atualizações: `git push` na branch `main` republica o site automaticamente.
+O deploy roda em [`.github/workflows/pages.yml`](.github/workflows/pages.yml) a cada push na `main`.
