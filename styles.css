@@ -1,0 +1,196 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 1.5rem 1rem 2.5rem;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #4a1535;
+  background: linear-gradient(160deg, #fce4ec 0%, #f8bbd9 45%, #f48fb1 100%);
+}
+
+/* Folder = folheto dobrado */
+.folder {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow:
+    0 2px 0 #e91e8c33,
+    0 12px 40px #ad145780,
+    inset 0 0 0 1px #ffffff99;
+  overflow: hidden;
+}
+
+/* Capa */
+.folder-cover {
+  padding: 2.25rem 2rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #d81b60 0%, #ec407a 50%, #f06292 100%);
+  color: #fff;
+  border-bottom: 4px solid #ad1457;
+}
+
+.folder-tag {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.folder-cover h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 7vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.folder-subtitle {
+  margin: 0 0 1.25rem;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.folder-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.folder-meta span {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+/* Miolo — painéis do folder */
+.folder-body {
+  padding: 1.5rem 1.5rem 0.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1.15rem 1.2rem;
+  background: #fdf2f7;
+  border-left: 4px solid #e91e8c;
+  border-radius: 0 6px 6px 0;
+}
+
+.panel h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ad1457;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.panel p {
+  margin: 0 0 0.65rem;
+}
+
+.panel p:last-child {
+  margin-bottom: 0;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.panel li + li {
+  margin-top: 0.35rem;
+}
+
+.panel-highlight {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #880e4f;
+  background: #fce4ec;
+  border-radius: 4px;
+}
+
+.panel-note {
+  margin-top: 0.75rem !important;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6d1b4a;
+}
+
+.panel--wide {
+  border-left-color: #c2185b;
+  background: #fff;
+  border: 1px solid #f8bbd9;
+  border-radius: 6px;
+}
+
+.folder-cta {
+  margin-top: 0.75rem !important;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #c2185b;
+  text-align: center;
+}
+
+/* Contracapa */
+.folder-back {
+  margin-top: 0.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #6d1b4a;
+  background: #fce4ec;
+  border-top: 2px dashed #f48fb1;
+}
+
+.folder-back p {
+  margin: 0 0 0.4rem;
+}
+
+.folder-back a {
+  color: #ad1457;
+  font-weight: 600;
+}
+
+.folder-disclaimer {
+  margin-top: 0.6rem !important;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+@media (min-width: 560px) {
+  .folder-body {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: #fff;
+  }
+
+  .folder {
+    box-shadow: none;
+    max-width: 100%;
+  }
+}
