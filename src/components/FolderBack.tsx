@@ -69,7 +69,7 @@ export default function FolderBack() {
           aria-hidden="true"
         />
 
-        <div className="flex w-fit max-w-full shrink-0 items-center gap-3">
+        <div className="flex w-full max-w-full shrink-0 items-center justify-between gap-3 md:w-fit md:justify-start">
           <FooterBlock icon={<LuInstagram />} label={<FooterLabel>Instagram:</FooterLabel>}>
             <Typography variant="muted" className="text-[0.85rem] font-normal leading-snug">
               @biomedt60

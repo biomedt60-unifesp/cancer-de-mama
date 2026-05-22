@@ -17,7 +17,7 @@ const base =
   'print-avoid-break flex min-w-0 flex-col gap-4 rounded-lg border border-brand-100 px-4 py-4 sm:gap-5 sm:px-6 sm:py-6';
 
 const spanStyles: Record<NonNullable<SectionProps['span']>, string> = {
-  full: 'sm:col-span-2',
+  full: 'md:col-span-2',
   auto: '',
 };
 

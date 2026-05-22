@@ -5,7 +5,7 @@ import { Typography } from './Typography';
 
 export default function RiskAndSymptomsSections() {
   return (
-    <div className="grid w-full min-w-0 grid-cols-1 gap-4 sm:col-span-2 sm:grid-cols-2 sm:gap-6">
+    <div className="grid w-full min-w-0 grid-cols-1 gap-4 md:col-span-2 md:grid-cols-2 md:gap-6">
       <Section
         title="Fatores de risco"
         variant="pink"
