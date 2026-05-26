@@ -35,9 +35,9 @@ export default function WhatToDoSection() {
             <List>
               <ListItem>Mamografia</ListItem>
               <ListItem>Ultrassonografia</ListItem>
-              <ListItem>Biópsia</ListItem>
               <ListItem>Exame clínico das mamas (ECM)</ListItem>
               <ListItem>Exames de imagem complementares</ListItem>
+              <ListItem>Biópsia</ListItem>
             </List>
           </div>
         </div>
