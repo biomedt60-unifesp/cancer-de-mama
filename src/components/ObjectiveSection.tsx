@@ -28,7 +28,7 @@ export default function ObjectiveSection({ onStartQuiz }: ObjectiveSectionProps)
         </h2>
 
         <Typography className="min-w-0 w-full max-w-lg sm:max-w-none sm:text-left">
-          Este material foi elaborado pela <strong>Turma 60 de Biomedicina da UNIFESP</strong> como
+          Este material foi elaborado pelos alunos do <strong>1º ano de Biomedicina da UNIFESP</strong> como
           projeto de extensão, para informar e conscientizar a população, especialmente as mulheres,
           sobre a importância da prevenção e do cuidado com a saúde.
         </Typography>
