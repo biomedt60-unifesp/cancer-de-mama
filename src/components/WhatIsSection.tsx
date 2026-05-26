@@ -12,8 +12,7 @@ export default function WhatIsSection() {
         <Typography>
           O câncer de mama é uma doença em que células da mama passam a crescer e se multiplicar de
           forma descontrolada e anormal. Essas células deixam de exercer suas funções normais e, se
-          não forem tratadas, podem <TextHighlight>invadir outras partes do corpo.</TextHighlight>{' '}
-          se não forem tratadas.
+          não forem tratadas, podem <TextHighlight>invadir outras partes do corpo.</TextHighlight>
         </Typography>
         <Typography>
           O câncer de mama é o{' '}
