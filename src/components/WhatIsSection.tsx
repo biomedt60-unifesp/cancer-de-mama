@@ -16,9 +16,10 @@ export default function WhatIsSection() {
           se não forem tratadas.
         </Typography>
         <Typography>
-          O câncer de mama representa o{' '}
-          <TextHighlight>segundo tipo de câncer mais comum </TextHighlight>na população feminina
-          brasileira e representa cerca de <TextHighlight>30% dos casos</TextHighlight>.
+          O câncer de mama é o{' '}
+          <TextHighlight>tipo de câncer mais incidente entre as mulheres no mundo.</TextHighlight>{' '}
+          No Brasil, representa o segundo tipo de câncer mais comum na população feminina,
+          correspondendo a cerca de 30% dos casos registrados.
         </Typography>
       </div>
       <figure className="m-0 flex shrink-0 items-center justify-center self-center">

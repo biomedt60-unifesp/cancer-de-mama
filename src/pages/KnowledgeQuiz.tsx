@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -13,6 +13,7 @@ import {
   type QuizChoice,
   type QuizQuestion,
 } from '../data/quizQuestions';
+import { trackQuizAnswer, trackQuizComplete, trackQuizStart } from '../lib/gtm';
 
 type KnowledgeQuizProps = {
   onBack: () => void;
@@ -374,8 +375,10 @@ export default function KnowledgeQuiz({ onBack }: KnowledgeQuizProps) {
   const [cardPhase, setCardPhase] = useState<CardPhase>('idle');
   const [skipUnderTransition, setSkipUnderTransition] = useState(false);
   const [advanceInstant, setAdvanceInstant] = useState(false);
+  const hasTrackedQuizStart = useRef(false);
 
   const question = QUIZ_QUESTIONS[index];
+  const questionTotal = QUIZ_QUESTIONS.length;
   const nextQuestion = QUIZ_QUESTIONS[index + 1];
   const hasNextQuestion = index < QUIZ_QUESTIONS.length - 1;
   const isFinished = index >= QUIZ_QUESTIONS.length;
@@ -388,12 +391,27 @@ export default function KnowledgeQuiz({ onBack }: KnowledgeQuizProps) {
 
   const handleSelect = (choice: QuizChoice) => {
     if (answered) return;
+
+    const isCorrect = isChoiceCorrect(question, choice);
+
+    trackQuizAnswer({
+      questionId: question.id,
+      questionNumber: index + 1,
+      questionTotal,
+      choice,
+      isCorrect,
+      correctAnswer: question.correctAnswer,
+    });
+
     setSelected(choice);
-    setAnswers((prev) => [
-      ...prev,
-      { choice, isCorrect: isChoiceCorrect(question, choice) },
-    ]);
+    setAnswers((prev) => [...prev, { choice, isCorrect }]);
   };
+
+  useEffect(() => {
+    if (hasTrackedQuizStart.current) return;
+    hasTrackedQuizStart.current = true;
+    trackQuizStart(questionTotal);
+  }, [questionTotal]);
 
   const isLastQuestion = index >= QUIZ_QUESTIONS.length - 1;
 
@@ -462,11 +480,23 @@ export default function KnowledgeQuiz({ onBack }: KnowledgeQuizProps) {
     setCardPhase('idle');
     setSkipUnderTransition(false);
     setAdvanceInstant(false);
+    trackQuizStart(questionTotal);
   };
 
   useEffect(() => {
-    if (isFinished) window.scrollTo(0, 0);
-  }, [isFinished]);
+    if (!isFinished) return;
+
+    const unsureCount = answers.filter((entry) => entry.choice === 'unsure').length;
+    const percent = Math.round((score / questionTotal) * 100);
+
+    trackQuizComplete({
+      score,
+      total: questionTotal,
+      percent,
+      unsureCount,
+    });
+    window.scrollTo(0, 0);
+  }, [isFinished, answers, score, questionTotal]);
 
   if (cardPhase === 'results-loading') {
     return <QuizResultsLoading />;
