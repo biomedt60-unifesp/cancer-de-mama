@@ -38,7 +38,7 @@ export default function FolderCover() {
               <span className="mx-[0.2rem] font-normal opacity-55" aria-hidden="true">
                 |
               </span>
-              UNIFESP · Biomedicina
+              UNIFESP · 1º ano Biomedicina
             </span>
           </p>
         </div>
